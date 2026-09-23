@@ -1,0 +1,63 @@
+{
+  "name": "@mypdf2md/docx2md",
+  "version": "0.1.0",
+  "description": "Convert .docx (OOXML) to GitHub Flavored Markdown. No DOM, no network, no filesystem \u2014 runs in Node and the browser.",
+  "keywords": [
+    "docx",
+    "ooxml",
+    "word",
+    "markdown",
+    "gfm",
+    "converter",
+    "browser"
+  ],
+  "license": "MIT",
+  "author": "Limenzy",
+  "homepage": "https://mypdf2md.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limenzy/docx2md.git"
+  },
+  "bugs": {
+    "url": "https://github.com/limenzy/docx2md/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "bin": {
+    "docx2md": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "prepublishOnly": "pnpm run clean && pnpm run build && pnpm run test",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "fflate": "^0.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5",
+    "vitest": "^4.1.10"
+  }
+}
