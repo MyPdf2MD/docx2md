@@ -12,14 +12,14 @@
     "browser"
   ],
   "license": "MIT",
-  "author": "Limenzy",
+  "author": "MyPdf2MD",
   "homepage": "https://mypdf2md.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/limenzy/docx2md.git"
+    "url": "git+https://github.com/MyPdf2MD/docx2md.git"
   },
   "bugs": {
-    "url": "https://github.com/limenzy/docx2md/issues"
+    "url": "https://github.com/MyPdf2MD/docx2md/issues"
   },
   "type": "module",
   "sideEffects": false,

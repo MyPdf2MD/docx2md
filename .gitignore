@@ -1,0 +1,9 @@
+# This file travels with the subtree split, so it is the public repository's
+# only ignore list — the monorepo root's does not come along. See
+# scripts/publish-docx2md.mjs.
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+*.tgz
+.DS_Store
