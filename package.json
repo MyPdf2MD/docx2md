@@ -46,6 +46,7 @@
   ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
+    "prepare": "npm run build",
     "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
     "prepublishOnly": "pnpm run clean && pnpm run build && pnpm run test",
     "typecheck": "tsc --noEmit",

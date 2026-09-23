@@ -13,9 +13,25 @@ structure from font sizes or indentation.
 
 ## Install
 
+Not yet published to npm. Install from the repository:
+
 ```sh
-npm install @mypdf2md/docx2md
+npm install github:MyPdf2MD/docx2md
 ```
+
+npm builds the package as it installs it, so nothing further is needed.
+
+To work on it, clone instead:
+
+```sh
+git clone https://github.com/MyPdf2MD/docx2md.git
+cd docx2md
+npm install
+npm run build
+```
+
+`npm install` already runs the build; the explicit `npm run build` is there
+for rebuilding after a change. `npm test` runs the suite.
 
 ## Use
 
@@ -37,10 +53,12 @@ returns a string.
 
 ## CLI
 
+From a clone, after `npm install`:
+
 ```sh
-npx @mypdf2md/docx2md report.docx              # to stdout
-npx @mypdf2md/docx2md report.docx -o report.md # to a file
-cat report.docx | npx @mypdf2md/docx2md        # from stdin
+node dist/cli.js report.docx              # to stdout
+node dist/cli.js report.docx -o report.md # to a file
+cat report.docx | node dist/cli.js        # from stdin
 ```
 
 Exits `0` on success, `1` on a document it cannot read, `2` on bad usage.
