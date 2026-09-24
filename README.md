@@ -19,9 +19,14 @@ Not yet published to npm. Install from the repository:
 npm install github:MyPdf2MD/docx2md
 ```
 
-npm builds the package as it installs it, so nothing further is needed.
+npm builds the package as it installs it, via a `prepare` script.
 
-To work on it, clone instead:
+If your npm is set to block install scripts — `--ignore-scripts`, or a pending
+`npm approve-scripts` prompt — the build does not run, `dist/` is missing and
+every import fails with `ERR_MODULE_NOT_FOUND`. Allow the script for this
+package, or use the clone below.
+
+To work on it, or to avoid install scripts entirely, clone instead:
 
 ```sh
 git clone https://github.com/MyPdf2MD/docx2md.git
@@ -59,6 +64,13 @@ From a clone, after `npm install`:
 node dist/cli.js report.docx              # to stdout
 node dist/cli.js report.docx -o report.md # to a file
 cat report.docx | node dist/cli.js        # from stdin
+```
+
+Installed from GitHub into another project, the same binary is on the path as
+`docx2md`:
+
+```sh
+npx docx2md report.docx
 ```
 
 Exits `0` on success, `1` on a document it cannot read, `2` on bad usage.
